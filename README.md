@@ -12,10 +12,10 @@ Em caso de erro na hora do deploy, basta executar "npm install" dentro do direto
 
 #### Outros casos
 
-##### Instalando Bootstrap
+##### Erro na versão do Bootstrap
 
 Execute "npm install bootstrap" para adicionar os arquivos Bootstrap ao módulo da aplicação
 
-##### Instalando JQuery
+##### Erro na versão do JQuery
 
 Execute "npm install jquery" para adicionar os arquivos JQuery ao módulo da aplicação
