@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Desafio';
+  public static KEY='CPF';
+  public static i=0;
+
+  constructor() {
+    localStorage.clear();
+
+    $('#listItem').hover(function() {
+      $('#listItem').addClass('active');
+    });
+  }
 }

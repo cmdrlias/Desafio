@@ -1,0 +1,39 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <form #f="ngForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)">
+          <div class="form-group col-sm">
+            <label>Cpf:</label>
+            <input class="form-control" type="text" name="cpf" [formControl]="myForm.get('cpf')" >
+          </div>
+          <div class="col-sm">
+              <button type="submit" class="btn btn-primary float-right">Procurar</button>
+          </div>
+        </form>
+      </div>
+      <div class="card-body">
+        <div class="col-sm">
+          <ul class="list-group">
+            <li class="list-group-item">{{ data }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header">
+        <button type="button" class="btn btn-primary float-right" (click)="findAll()">Todos os registros</button>
+      </div>
+      <div class="card-body">
+        <div class="col-sm">
+          <ul class="list-group" *ngFor="let d of dataList">
+            <li class="list-group-item" id="listItem">{{ d }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
