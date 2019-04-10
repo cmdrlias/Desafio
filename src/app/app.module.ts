@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { InserirComponent } from './inserir/inserir.component';
 import { ConsultarComponent } from './consultar/consultar.component';
 import { RemoverComponent } from './remover/remover.component';
+import {NgxMaskModule} from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RemoverComponent } from './remover/remover.component';
     AppRoutingModule,
     StorageServiceModule,
     ReactiveFormsModule, 
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

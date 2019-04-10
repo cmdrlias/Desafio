@@ -1,14 +1,17 @@
 <div class="row d-flex justify-content-center">
   <div class="col-lg-4">
+      <h4 class="title text-center">Inserir CPF</h4>
+      <p>Cadastre números de CPF no LocalStorage da aplicação utilizando o formulário abaixo.</p>
     <div class="card">
         <div class="card-body">
             <form #f="ngForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)">
               <div class="form-group col-sm">
                 <label>Cpf:</label>
-                <input class="form-control" type="text" name="cpf" [formControl]="myForm.get('cpf')" >
+                <input class="form-control" type="text" name="cpf" #cpf id="cpf" [specialCharacters]="[ '.' ,'.' , '-' ]" mask="000.000.000-00"
+                      [dropSpecialCharacters]="false" [validation]="true" maxlength="14" [formControl]="myForm.get('cpf')" >
               </div>
               <div class="col-sm">
-                  <button type="submit" class="btn btn-primary float-right">Salvar</button>
+                  <button type="submit" class="btn btn-primary float-right" (click)="cpf.value=''">Salvar</button>
               </div>
             </form>
         </div>

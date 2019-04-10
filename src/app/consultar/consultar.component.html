@@ -1,14 +1,17 @@
 <div class="row d-flex justify-content-center">
   <div class="col-lg-4">
+    <h4 class="title text-center">Pesquise um CPF</h4>
+    <p>Procure por um número específico de CPF no LocalStorage.</p>
     <div class="card">
       <div class="card-header">
         <form #f="ngForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)">
           <div class="form-group col-sm">
             <label>Cpf:</label>
-            <input class="form-control" type="text" name="cpf" [formControl]="myForm.get('cpf')" >
+            <input class="form-control" type="text" #cpf name="cpf" [formControl]="myForm.get('cpf')" id="cpf" [specialCharacters]="[ '.' ,'.' , '-' ]" mask="000.000.000-00"
+            [dropSpecialCharacters]="false" [validation]="true" maxlength="14" [formControl]="myForm.get('cpf')">
           </div>
           <div class="col-sm">
-              <button type="submit" class="btn btn-primary float-right">Procurar</button>
+              <button type="submit" class="btn btn-primary float-right" (click)="cpf.value=''">Procurar</button>
           </div>
         </form>
       </div>
@@ -22,6 +25,8 @@
     </div>
   </div>
   <div class="col-lg-4">
+    <h4 class="title text-center">Todos os Registros</h4>
+    <p>Clique no botão para visualizar todos os registros de CPF cadastrados na aplicação.</p>
     <div class="card">
       <div class="card-header">
         <button type="button" class="btn btn-primary float-right" (click)="findAll()">Todos os registros</button>
@@ -29,7 +34,7 @@
       <div class="card-body">
         <div class="col-sm">
           <ul class="list-group" *ngFor="let d of dataList">
-            <li class="list-group-item" id="listItem">{{ d }}</li>
+            <li class="list-group-item">{{ d }}</li>
           </ul>
         </div>
       </div>

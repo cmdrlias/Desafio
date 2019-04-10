@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+button {
+    color: #fff !important;
+    background-color: #212529 !important;
+    border-color: #212529 !important;
+    padding: 1% 4%;
+}
+
+button:hover {
+    opacity: .9;
+}

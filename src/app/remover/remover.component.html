@@ -1,5 +1,7 @@
 <div class="row d-flex justify-content-center">
   <div class="col-lg-4">
+    <h4 class="title text-center">Remova um CPF</h4>
+    <p>Remova um registro de CPF expecífico que exista no LocalStorage da aplicação.</p>
     <div class="card">
         <div class="card-body">
             <form [formGroup]="form2" (ngSubmit)="onSubmit(form2)">
@@ -13,6 +15,17 @@
                   <button type="submit" class="btn btn-primary float-right">Excluir</button>
               </div>
             </form>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-4">
+    <h4 class="title text-center">Remova todos os registros</h4>
+    <p>Clique no botão abaixo para remover todos os registros de CPF inseridos no LocalStorage.</p>
+    <div class="card">
+        <div class="card-body">
+          <div class="col-sm">
+            <button type="button" (click)="ClearStorageItems()" class="btn btn-primary float-right">Excluir Todos os Registros</button>
+          </div>
         </div>
       </div>
   </div>
